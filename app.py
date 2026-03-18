@@ -118,7 +118,7 @@ if st.sidebar.button("Gerar Proposta Profissional"):
             pdf.cell(0, 10, "Esta proposta tem validade de 3 dias úteis.", ln=True)
 
             # Download
-            pdf_output = pdf.output(dest='S').encode('latin-1', 'ignore')
+            pdf_output = bytes(pdf.output())
             st.success("Cálculo realizado com sucesso!")
             st.download_button(
                 label="📥 Baixar Proposta em PDF",
